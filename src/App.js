@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+// App.js
+
+import React, { useState } from 'react';
+import SearchForm from './SearchForm';
+import Results from './Results';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [results, setResults] = useState([]);
+  const [mediaType, setMediaType] = useState('image');
+
+  const handleToggle = (type) => {
+    setMediaType(type);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>NASA Image and Video Library</h1>
+      <div className="toggle-container">
+        <label>
+          Images
+          <input
+            type="checkbox"
+            checked={mediaType === 'image'}
+            onChange={() => handleToggle('image')}
+          />
+        </label>
+        <label>
+          Videos
+          <input
+            type="checkbox"
+            checked={mediaType === 'video'}
+            onChange={() => handleToggle('video')}
+          />
+        </label>
+      </div>
+      <SearchForm setResults={setResults} mediaType={mediaType} />
+      <Results results={results} />
     </div>
   );
-}
+};
 
 export default App;
