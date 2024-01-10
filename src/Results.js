@@ -1,5 +1,3 @@
-// Results.js
-
 import React from 'react';
 
 const Results = ({ results }) => {
@@ -24,10 +22,11 @@ const Results = ({ results }) => {
                 width="100%"
                 height="100%"
                 className="result-video"
-              >
-                <source src={result.links[0].href} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                poster={result.links[0].href}
+                src={result.links[0].href}
+                type="video/ogg"
+                data-src={result.links[0].href}
+              ></video>
             )}
           </a>
           <p>{result.data[0].title}</p>
