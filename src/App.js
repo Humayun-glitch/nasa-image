@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import SearchForm from './SearchForm';
+import SearchForm from './SearchForm.js';
 import Results from './Results';
 import { MoonLoader } from 'react-spinners';
 import './App.css';
