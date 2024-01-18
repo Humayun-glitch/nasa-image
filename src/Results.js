@@ -23,10 +23,10 @@ const Results = ({ results }) => {
                 height="100%"
                 className="result-video"
                 poster={result.links[0].href}
-                src={result.links[0].href}
-                type="video/ogg"
-                data-src={result.links[0].href}
-              ></video>
+              >
+                <source src={result.links[0].href} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             )}
           </a>
           <p>{result.data[0].title}</p>
