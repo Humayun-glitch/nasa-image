@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import './SearchForm.css';
 
-const SearchForm = ({ setResults }) => {
+const SearchForm = ({ setResults, setLoading }) => {
   const [query, setQuery] = useState('');
   const [showImages, setShowImages] = useState(true);
   const [showVideos, setShowVideos] = useState(true);
@@ -14,6 +15,7 @@ const SearchForm = ({ setResults }) => {
     if (showVideos) mediaType.push('video');
 
     try {
+      setLoading(true);
       const response = await axios.get('https://images-api.nasa.gov/search', {
         params: {
           q: query,
@@ -23,36 +25,46 @@ const SearchForm = ({ setResults }) => {
       setResults(response.data.collection.items);
     } catch (error) {
       console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div>
+    <div className="search-form">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Enter search query"
+        className="search-input"
       />
-      <label>
-        Images
-        <input
-          type="checkbox"
-          checked={showImages}
-          onChange={() => setShowImages(!showImages)}
-        />
-      </label>
-      <label>
-        Videos
-        <input
-          type="checkbox"
-          checked={showVideos}
-          onChange={() => setShowVideos(!showVideos)}
-        />
-      </label>
-      <button onClick={handleSearch}>Search</button>
+      <div className="filter-container">
+        <label className="filter-label">
+          Images
+          <input
+            type="checkbox"
+            checked={showImages}
+            onChange={() => setShowImages(!showImages)}
+            className="filter-checkbox"
+          />
+        </label>
+        <label className="filter-label">
+          Videos
+          <input
+            type="checkbox"
+            checked={showVideos}
+            onChange={() => setShowVideos(!showVideos)}
+            className="filter-checkbox"
+          />
+        </label>
+      </div>
+      <button onClick={handleSearch} className="search-button">
+        Search
+      </button>
     </div>
   );
 };
 
 export default SearchForm;
+
