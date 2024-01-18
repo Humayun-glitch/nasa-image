@@ -70,7 +70,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Sample Image of the Web App
-![image](https://github.com/Humayun-glitch/nasa-image/assets/57752996/610d8f82-1dcf-4b41-ac62-88de92a87234)
-![image](https://github.com/Humayun-glitch/nasa-image/assets/57752996/45f46a35-a023-4070-a81a-75d7155ad086)
+![image](https://github.com/Humayun-glitch/nasa-image/assets/57752996/d4bec63f-d3ca-4ed5-91e9-0888d3c7fd5c)
+![image](https://github.com/Humayun-glitch/nasa-image/assets/57752996/15629505-725e-49ec-bba0-4253aa56b53b)
+
+
 
 
