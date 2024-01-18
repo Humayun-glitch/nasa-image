@@ -10,11 +10,11 @@
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: bold;
+  color: #000000;
   text-align: center;
   transition: color 0.3s;
   text-transform: uppercase;
   letter-spacing: 2px;
-  
 }
 
 .title {
@@ -24,6 +24,7 @@
   text-align: center;
   transition: color 0.3s;
   font-family:'Raleway',sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px; 
   margin-bottom: 20px;
@@ -68,8 +69,8 @@
   background: #000000;
   border-radius: 15px;
   padding: 5px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode-toggle .toggle-text {
@@ -123,33 +124,6 @@
   transition: all 0.4s ease;
 }
 
-.dark-mode {
-  background-color: #333;
-  color: white;
-}
-
-.dark-mode .title,
-.dark-mode .filter-label,
-.dark-mode .search-input,
-.dark-mode .search-button,
-.dark-mode .result-title,
-.dark-mode .loading {
-  color: white;
-}
-
-.dark-mode .search-input {
-  border-color: white;
-  background-color: #333;
-}
-
-.dark-mode .result {
-  border-color: white;
-}
-
-.dark-mode .search-button {
-  background-color: white;
-  color: #333;
-}
 .search-form {
   display: flex;
   flex-direction: column;
@@ -259,6 +233,32 @@
   font-weight: bold;
   color: #000000;
   transition: color 0.3s;
-  text-align: center;
 }
 
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .title,
+.dark-mode .filter-label,
+.dark-mode .search-input,
+.dark-mode .search-button,
+.dark-mode .result-title,
+.dark-mode .loading {
+  color: white;
+}
+
+.dark-mode .search-input {
+  border-color: white;
+  background-color: #333;
+}
+
+.dark-mode .result {
+  border-color: white;
+}
+
+.dark-mode .search-button {
+  background-color: white;
+  color: #333;
+}
