@@ -4,13 +4,12 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Calisto MT', serif;
+  font-family: 'Raleway',sans-serif ;
   font-size: 20px;
   color: #080808;
   transition: background-color 0.3s, color 0.3s;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: bold;
-  color: #000000;
   text-align: center;
   transition: color 0.3s;
   text-transform: uppercase;
@@ -24,13 +23,13 @@
   color: #000000;
   text-align: center;
   transition: color 0.3s;
-  font-family: 'Calisto MT', serif;
+  font-family:'Raleway',sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px; 
   margin-bottom: 20px;
   position: relative;
   display: inline-block;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Set your shadow color and size */
+   
 }
 
 .title::before {
@@ -40,7 +39,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000000; /* Set your hover line color */
+  background-color: #000000; 
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -66,18 +65,20 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0, 0, 0);
-  background: #9A9999;
+  background: #000000;
   border-radius: 15px;
   padding: 5px;
-  transition: background 0.2s ease;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dark-mode-toggle .toggle-text {
   flex: 1;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   color: #fff;
+  font-family: 'Raleway',sans-serif ;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
@@ -111,7 +112,7 @@
 
 .dark-mode .dark-mode-toggle .toggle-icon {
   background: #f5f4f7;
-  transform: translateX(80px);
+  transform: translateX(30px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -122,6 +123,33 @@
   transition: all 0.4s ease;
 }
 
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .title,
+.dark-mode .filter-label,
+.dark-mode .search-input,
+.dark-mode .search-button,
+.dark-mode .result-title,
+.dark-mode .loading {
+  color: white;
+}
+
+.dark-mode .search-input {
+  border-color: white;
+  background-color: #333;
+}
+
+.dark-mode .result {
+  border-color: white;
+}
+
+.dark-mode .search-button {
+  background-color: white;
+  color: #333;
+}
 .search-form {
   display: flex;
   flex-direction: column;
@@ -160,7 +188,7 @@
 
 .filter-checkbox {
   margin-right: 5px;
-  transform: scale(1.0);
+  transform: scale(1.25);
 }
 
 .search-button {
@@ -231,32 +259,6 @@
   font-weight: bold;
   color: #000000;
   transition: color 0.3s;
+  text-align: center;
 }
 
-.dark-mode {
-  background-color: #333;
-  color: white;
-}
-
-.dark-mode .title,
-.dark-mode .filter-label,
-.dark-mode .search-input,
-.dark-mode .search-button,
-.dark-mode .result-title,
-.dark-mode .loading {
-  color: white;
-}
-
-.dark-mode .search-input {
-  border-color: white;
-  background-color: #333;
-}
-
-.dark-mode .result {
-  border-color: white;
-}
-
-.dark-mode .search-button {
-  background-color: white;
-  color: #333;
-}
