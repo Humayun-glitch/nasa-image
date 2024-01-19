@@ -8,13 +8,21 @@
   font-size: 20px;
   color: #080808;
   transition: background-color 0.3s, color 0.3s;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   color: #000000;
   text-align: center;
   transition: color 0.3s;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.result-item {
+  transition: transform 0.3s; /* Added transform transition */
+}
+
+.result-item:hover {
+  transform: scale(1.05); /* Scale on hover */
+  
 }
 
 .title {
