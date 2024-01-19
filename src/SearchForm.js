@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './SearchForm.css';
 
-const SearchForm = ({ setResults, setLoading }) => {
+const SearchForm = ({ setResults, setLoading, setTotalPages }) => {
   const [query, setQuery] = useState('');
   const [showImages, setShowImages] = useState(true);
   const [showVideos, setShowVideos] = useState(true);
@@ -22,7 +22,11 @@ const SearchForm = ({ setResults, setLoading }) => {
           media_type: mediaType.join(','),
         },
       });
+
       setResults(response.data.collection.items);
+      
+      // Update the total pages based on the number of items
+      setTotalPages(Math.ceil(response.data.collection.items.length / 10));
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
